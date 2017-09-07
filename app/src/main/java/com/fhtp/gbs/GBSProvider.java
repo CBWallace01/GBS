@@ -20,7 +20,7 @@ import android.util.Log;
 
 public class GBSProvider {
     private final static String TAG = "FakeLocationProvider";
-    public final static String FAKE_PROVIDER_NAME = "FakeLocationProvider";
+    public final static String FAKE_PROVIDER_NAME = "NETWORK_PROVIDER";
 
     private int frequency = 500; // milliseconds, how often to generate a new location
     private double stepSize = 0.00002; // degrees, not meters
@@ -50,15 +50,15 @@ public class GBSProvider {
         this.ll = listener;
         this.ctx = ctx;
         try {
-            lm.addTestProvider(FAKE_PROVIDER_NAME, false, false,
+            lm.addTestProvider(LocationManager.NETWORK_PROVIDER, false, false,
                     false, false, true, true, true, Criteria.POWER_LOW, Criteria.ACCURACY_FINE);
         } catch (IllegalArgumentException e) {
             Log.w(TAG, "fake provider is already added");
         }
         Log.w(TAG, "done with that");
-        lm.setTestProviderEnabled(FAKE_PROVIDER_NAME, true);
-        lm.setTestProviderStatus(FAKE_PROVIDER_NAME, LocationProvider.AVAILABLE, null, System.currentTimeMillis());
-        lm.requestLocationUpdates(FAKE_PROVIDER_NAME, 0, 0, ll);
+        lm.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER, true);
+        lm.setTestProviderStatus(LocationManager.NETWORK_PROVIDER, LocationProvider.AVAILABLE, null, System.currentTimeMillis());
+        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, ll);
 
         Log.w(TAG, "building handler");
         handler = new Handler();
@@ -78,7 +78,7 @@ public class GBSProvider {
      */
     @SuppressLint("NewApi")
     public void nextLocation() {
-        Location l = new Location(FAKE_PROVIDER_NAME);
+        Location l = new Location(LocationManager.NETWORK_PROVIDER);
         if (nextStepUp) {
             currentLat += stepSize;
         } else {
@@ -93,7 +93,7 @@ public class GBSProvider {
 
         nextStepUp = !nextStepUp;
 
-        lm.setTestProviderLocation(FAKE_PROVIDER_NAME, l);
+        lm.setTestProviderLocation(LocationManager.NETWORK_PROVIDER, l);
         handler.postDelayed(timerTask, frequency);
     }
 
@@ -103,6 +103,6 @@ public class GBSProvider {
     public void stop() {
         handler.removeCallbacks(timerTask);
         lm.removeUpdates(ll);
-        lm.removeTestProvider(FAKE_PROVIDER_NAME);
+        lm.removeTestProvider(LocationManager.NETWORK_PROVIDER);
     }
 }
