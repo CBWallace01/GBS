@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">GBS</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="mapButton">Go To Map</string>
-    <string name="error_gps_disabled">Ain\'t No GPS!</string>
-</resources>
