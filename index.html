@@ -3,23 +3,27 @@
 
 <head>
   <link rel="stylesheet" href="index.css">
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> </head>
 
 <body>
   <div id="background"></div>
   <div id="header"></div>
   <h1>GBS</h1>
-  <div id="menu"></div>
-  <div id="map"></div>
-  <div id="name">
-    <h1>Global BS System</h1>
-    <button onclick="currentLocationClick()">Where Am I?</button>
+  <div class="flexContainer">
+    <div id="menu">
+        <div>Terrame</div>
+        <div>American Family Care</div>
+        <div>Huntsville Art Museum</div>
+    </div>
+    <div id="map"></div>
+    <div id="noises">
+      <div>Coffee Shop</div>
+      <div>Big Crowd</div>
+      <div>Elevator Music</div>
+    </div>
   </div>
-  <script src="index.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ10DtV9o8hR__b1xw1y1sPeziXIbFaSM&libraries=places&callback=getLocation">
-
-  </script>
+  <h1 id="name">Global BS System</h1>
+  <button id="where" onclick="currentLocationClick()">Where Am I?</button>
 </body>
 
 </html>

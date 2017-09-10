@@ -1,3 +1,7 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
 #background {
   background-image: url("gbs.jpg");
   background-color: navy;
@@ -27,23 +31,72 @@ h1 {
   text-align: center;
 }
 
-#name h1 {
-  background: #000;
-  border-radius: 20px;
-  width: 300px;
-  margin: auto;
-  margin-top: 15px;
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
 }
+
 #menu {
-  display: inline-block;
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  color: #d59563;
+  width: 15%;
   height: 75vh;
+  float: left;
+  border-radius: 10px;
+  border: none;
+  margin-right: 15px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2em;
+  text-align: center;
 }
-#map {
-  display: inline-block;
+
+#noises {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  color: #d59563;
+  width: 12%;
   height: 75vh;
-  width: 80%;
+  border-radius: 10px;
+  border: none;
+  margin-left: 15px;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2em;
+  text-align: center;
+}
+
+#map {
+
+  height: 75vh;
+  width: 70%;
   margin: auto;
   border: solid #fff;
   border-radius: 10px;
+}
+
+#where {
+  position: relative;
+  bottom: 40px;
+  background-color: black;
+  color: #d59563;
+  border: 1px black;
+  border-radius: 20px;
+  vertical-align: middle;
+  font-size: 2.0rem;
+  margin: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 10px;
+}
+
+#name {
+  width: 70%;
+  margin: auto;
+  font-size: 3.0em;
+  color: #d59563;
+  margin-top: 15px;
 }
