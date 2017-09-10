@@ -34,8 +34,13 @@ h1 {
   margin: auto;
   margin-top: 15px;
 }
-
+#menu {
+  display: inline-block;
+  width: 20%;
+  height: 75vh;
+}
 #map {
+  display: inline-block;
   height: 75vh;
   width: 80%;
   margin: auto;

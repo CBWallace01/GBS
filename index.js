@@ -172,3 +172,10 @@ function getPlace(marker) {
     }
   );
 }
+
+var locations = ['Terrame Spa', 'American Family Care', 'Huntsville Art Museum']
+var locIndex = 0;
+
+function currentLocationClick() {
+  alert('You are supposed to be at\n' + locations[locIndex++ % 3])
+}
