@@ -173,7 +173,7 @@ function getPlace(marker) {
   );
 }
 
-var locations = ['Terrame Spa', 'American Family Care', 'Huntsville Art Museum']
+var locations = ['American Family Care', 'Huntsville Art Museum', 'Customer Work Site']
 var locIndex = 0;
 
 function currentLocationClick() {
